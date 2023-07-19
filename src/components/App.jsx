@@ -9,10 +9,10 @@ import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 // import { refreshUser } from 'redux/auth/operations';
 // import { useAuth } from 'hooks';
 
-import { Phonebook } from './Phonebook/Phonebook';
 const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
+const LogoutPage = lazy(() => import('../pages/LogoutPage'));
 const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
 export const App = () => {
   const dispatch = useDispatch();
@@ -56,6 +56,10 @@ export const App = () => {
                 component={<LoginPage />}
               />
             }
+          />
+          <Route
+            path="/logout"
+            element={<PrivateRoute redirectTo="/" component={<LogoutPage />} />}
           />
           <Route
             path="/contacts"

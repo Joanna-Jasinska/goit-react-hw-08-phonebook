@@ -3,7 +3,7 @@
   --box-shadow: -1px -1px 1px 0px lightgray, 1px 1px 3px 1px gray;
   --box-shadow-inset: inset 1px 1px 0px 1px lightgray,
     inset -1px -1px 0px 1px #f1f1f1, inset -70px -30px 40px 0px #f7f7f7;
-  --border-radius: 10px;
+  --border-radius: 16px;
   --border-inset: 2px solid white;
   --border: 0px solid lightgray;
   --border-medium: 1px solid red;

@@ -15,14 +15,6 @@ const handlePending = state => {
 };
 const deleteContactByIdPending = state => {
   state.isLoading = true;
-  // state.contacts = [
-  //   { name: 'x', number: 'x', id: 'x', deleting: true },
-  //   ...state.contacts.filter(item => item.id !== action.payload.id),
-  //   {
-  //     ...state.contacts.filter(item => item.id == action.payload.id)[0],
-  //     deleting: true,
-  //   },
-  // ];
 };
 const contactsSlice = createSlice({
   name: 'contacts',

@@ -12,7 +12,11 @@ export const Loader = ({ small = false, txt = 'loading' }) => {
         <div className={css.overlay}>
           <div
             className={`${css.loader} ${
-              txt === 'refreshingUser' ? css.refreshingUser : css.loading
+              txt === 'refreshingUser'
+                ? css.refreshingUser
+                : txt === 'logout'
+                ? css.LoggingOut
+                : css.loading
             }`}
           >
             <div className={css.spinner}>

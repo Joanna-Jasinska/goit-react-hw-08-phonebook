@@ -23,7 +23,10 @@ export const ContactList = ({ contacts, deleteContactHandle }) => {
   const Entry = ({ name, number, id }) => {
     return (
       <li className={css.entry} id={id}>
-        <span className={css.entryText}>{name + ': ' + number}</span>
+        <span className={css.entryText}>
+          <span className={css.name}>{name + ' '}</span>
+          <span className={css.number}>{` ${number}`}</span>
+        </span>
         <button
           key={`${name}${number}btn${id}`}
           className={`${css.button} ${css.delete}`}
@@ -69,18 +72,22 @@ export const ContactList = ({ contacts, deleteContactHandle }) => {
       ) : (
         ''
       )}
-      <ul className={css.list}>
-        {filterContacts(filter, contacts).map(el => {
-          return (
-            <Entry
-              name={el.name}
-              number={el.number}
-              id={`${el.id}`}
-              key={`entry${el.id}`}
-            />
-          );
-        })}
-      </ul>
+      {contacts.length < 1 ? (
+        <span className={css.label}>No contacts found.</span>
+      ) : (
+        <ul className={css.list}>
+          {filterContacts(filter, contacts).map(el => {
+            return (
+              <Entry
+                name={el.name}
+                number={el.number}
+                id={`${el.id}`}
+                key={`entry${el.id}`}
+              />
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };
