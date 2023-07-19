@@ -7,6 +7,11 @@
     var(--margin-component);
   border: var(--border);
   border-radius: var(--border-radius);
+  width: 100%;
+  box-sizing: border-box;
+}
+.form {
+  width: 100%;
 }
 .card {
   box-shadow: var(--box-shadow-inset);
@@ -44,6 +49,10 @@
   margin: var(--margin-component);
   margin-bottom: 1em;
   padding: 0.3em 0.6em;
+  min-width: 180px;
+  width: 99%;
+  display: inline;
+  box-sizing: border-box;
 }
 .input:hover,
 .input:active,
@@ -55,12 +64,33 @@
 }
 .contacts {
   margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 .list {
   margin: var(--margin-component);
-  padding: 0.3em 1.2em;
+  /* padding: 0.3em 1.2em; */
+  display: flexbox;
+  flex-wrap: wrap;
 }
 .entry {
+  box-shadow: var(--box-shadow-inset);
+  margin: var(--margin-component);
+  border: var(--border-inset);
+  border-radius: var(--border-radius);
+  padding: 0px 0.7em;
+
+  display: inline-block;
+  /* background-color: bisque; */
+  width: fit-content;
+  overflow: hidden;
+  overflow-y: auto;
+  /* padding-right: 1.5em; */
+  /* overflow-x: auto; */
+}
+.entryText {
+  overflow: hidden;
+  /* overflow-x: auto; */
+  line-break: anywhere;
 }
 .title {
   margin: 0.4em 0.2em 0.3em 0.2em;
@@ -68,10 +98,19 @@
 .delete {
   display: inline;
   position: relative;
-  left: 0;
-  top: -2px;
+  left: 7px;
+  /* top: -2px; */
+  top: 0px;
   /* margin-left: 0.3em; */
   transform: scale(0.82);
+  background-color: transparent;
+  opacity: 50%;
 }
+.delete:active,
+.delete:focus,
+.delete:hover {
+  opacity: 100%;
+}
+
 /* .add() {
 } */

@@ -13,6 +13,7 @@ export const ContactForm = ({
   return (
     <div className={css.card}>
       <form
+        className={css.form}
         onSubmit={e =>
           addContactHandle(e, {
             name: name,

@@ -23,7 +23,7 @@ export const ContactList = ({ contacts, deleteContactHandle }) => {
   const Entry = ({ name, number, id }) => {
     return (
       <li className={css.entry} id={id}>
-        {name + ': ' + number}
+        <span className={css.entryText}>{name + ': ' + number}</span>
         <button
           key={`${name}${number}btn${id}`}
           className={`${css.button} ${css.delete}`}

@@ -15,9 +15,9 @@ export const Phonebook = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   const addContactHandle = (e, newContact) => {
     e.preventDefault();
