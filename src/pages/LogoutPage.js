@@ -2,19 +2,13 @@ import { Loader } from 'components/Loader/Loader';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { logOut } from 'redux/auth/operations';
-// import { useId } from 'react';
 
 export const LogoutPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(
-      logOut({
-        // email: form.elements.email.value,
-        // password: form.elements.password.value,
-      })
-    );
+    dispatch(logOut({}));
     console.log('attempting to log out');
-  }, [dispatch, logOut]);
+  }, [dispatch]);
   return (
     <main
       style={{ width: '100%', boxSizing: 'border-box', padding: '0.4em 0px' }}

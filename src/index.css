@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+/* @import-normalize;  */
 :root {
   --box-shadow: -1px -1px 1px 0px lightgray, 1px 1px 3px 1px gray;
   --box-shadow-inset: inset 1px 1px 0px 1px lightgray,
@@ -75,7 +75,9 @@ ul {
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
-
+#root {
+  min-height: 100vh;
+}
 .app {
   flex-wrap: wrap;
   height: 100vh;

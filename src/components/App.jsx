@@ -1,15 +1,13 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Layout } from './Layout/Layout';
-import { fetchContacts } from 'redux/contacts/operations';
 import { Loader } from './Loader/Loader';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 import { setError } from 'redux/auth/slice';
 import { useAuth } from 'hooks';
-// import { refreshUser } from 'redux/auth/operations';
-// import { useAuth } from 'hooks';
+import { refreshUser } from 'redux/auth/operations';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
@@ -18,13 +16,12 @@ const LogoutPage = lazy(() => import('../pages/LogoutPage'));
 const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
 export const App = () => {
   const dispatch = useDispatch();
-  // const { isRefreshing } = useAuth();
-  const isRefreshing = false;
+  const { isRefreshing } = useAuth();
   const { error } = useAuth();
 
   useEffect(() => {
-    // dispatch(refreshUser());
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
+    // dispatch(fetchContacts());
   }, [dispatch]);
 
   useEffect(() => {
@@ -34,12 +31,6 @@ export const App = () => {
       }, 2000);
     }
   }, [error, dispatch]);
-
-  // return (
-  //   <div className="app">
-  //     <Phonebook />
-  //   </div>
-  // );
 
   return isRefreshing ? (
     <b>

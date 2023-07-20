@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from 'components/Header/Header';
-// import { AppBar } from './AppBar/AppBar';
+import { Footer } from 'components/Footer/Footer';
 import { Suspense } from 'react';
 import css from './Layout.module.css';
 
@@ -13,6 +13,7 @@ export const Layout = () => {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
+      <Footer />
     </div>
   );
 };

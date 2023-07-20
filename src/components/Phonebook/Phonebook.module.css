@@ -46,6 +46,7 @@
   /* transform: var(--scale-medium); */
   transform: var(--scale-small);
   background-color: var(--bg-highlighted);
+  cursor: pointer;
 }
 .input {
   box-shadow: var(--box-shadow-inset);
@@ -111,7 +112,7 @@
   position: absolute;
   top: -12px;
   right: -6px;
-  width: 150%;
+  width: 300%;
   height: 200%;
   /* background-color: #0000000d; */
   background-color: var(--bg-murky);
