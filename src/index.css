@@ -9,14 +9,13 @@
   --border-inset: 2px solid white;
   --border: 0px solid lightgray;
   --border-medium: 1px solid red;
-  /* --bg-highlighted: lightskyblue; */
   --bg-highlighted: #c6ffea6d;
   --bg-highlighted-solid: #d5f7ec;
+  /* --bg-outline: #d5f4ff; */
+  --bg-outline: #00344c78;
   --bg-regular: white;
   --bg-gentle: whitesmoke;
-  /* --bg-milky: #e7e7e76c; */
   --bg-milky: #e4fbff2e;
-  /* --bg-murky: #00000018; */
   --bg-murky: #16002118;
   --margin-component: 2px;
   --txt-disabled: dimgray;
