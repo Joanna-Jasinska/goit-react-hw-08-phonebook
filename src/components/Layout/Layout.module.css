@@ -1,0 +1,64 @@
+.backLight {
+  position: relative;
+  /* width: 30vw;
+    height: 30vw;
+    line-height: 30vw;
+    text-align: center;
+    color: #252b37;
+    background-color: #151823; */
+  animation: textColor 10s ease infinite;
+}
+.backLight:after {
+  position: absolute;
+  content: '';
+  /* top: 5vw; */
+  /* right: 0; */
+  /* top: -50%; */
+  top: -32%;
+  /* left: -50%; */
+  left: -32%;
+  /* top: 0px; */
+  /* left: 0%; */
+  z-index: -2000;
+  /* height: 350%; */
+  /* width: 200%; */
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  transform: scale(0.75);
+  -webkit-filter: blur(5vw);
+  -moz-filter: blur(5vw);
+  -ms-filter: blur(5vw);
+  filter: blur(5vw);
+  /* background: linear-gradient(270deg, #0fffc1, #7e0fff); */
+  background: linear-gradient(270deg, #c7e4dd, #e1d4f0);
+  /* background-size: 200% 200%; */
+  /* background-size: 100vw 100vh; */
+  animation: animateGlow 10s ease infinite;
+  /* background-color: red; */
+}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes textColor {
+  0% {
+    /* color: #7e0fff; */
+    color: #2c005e;
+  }
+  50% {
+    /* color: #0fffc1; */
+    color: #00382a;
+  }
+  100% {
+    /* color: #7e0fff; */
+    color: #24004e;
+  }
+}

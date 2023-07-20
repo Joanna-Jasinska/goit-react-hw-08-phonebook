@@ -1,13 +1,13 @@
 .phonebook {
   box-shadow: var(--box-shadow);
-  background-color: var(--bg-regular);
+  /* background-color: var(--bg-regular); */
+  border: var(--border);
+  border-radius: var(--border-radius);
   margin: var(--margin-component);
   display: block;
   padding: var(--margin-component);
   padding: var(--margin-component) var(--margin-component) 0.5em
     var(--margin-component);
-  border: var(--border);
-  border-radius: var(--border-radius);
   /* width: fit-content; */
   /* max-width: 960px; */
   width: 960px;
@@ -26,6 +26,7 @@
   align-items: flex-start;
   gap: 20px;
   padding: 0.6em;
+  background-color: var(--bg-milky);
 }
 .label {
   display: block;
@@ -39,10 +40,11 @@
   box-shadow: var(--box-shadow);
   padding: 0.3em 0.6em;
   transition-duration: var(--duration-short);
-  background-color: var(--bg-regular);
+  background-color: var(--bg-milky);
 }
 .button:hover {
-  /* transform: var(--scale-small); */
+  /* transform: var(--scale-medium); */
+  transform: var(--scale-small);
   background-color: var(--bg-highlighted);
 }
 .input {
@@ -78,7 +80,7 @@
 .entry {
   position: relative;
 
-  box-shadow: var(--box-shadow-inset);
+  box-shadow: var(--box-shadow-inset-small);
   margin: var(--margin-component);
   border: var(--border-inset);
   border-radius: var(--border-radius);
@@ -111,11 +113,26 @@
   right: -6px;
   width: 150%;
   height: 200%;
-  background-color: #0000000d;
+  /* background-color: #0000000d; */
+  background-color: var(--bg-murky);
 }
 .number {
+  position: relative;
   margin-left: 1em;
   /*  */
+}
+.number::before {
+  /* content: ''; */
+  z-index: 10;
+  position: relative;
+  position: absolute;
+  top: -12px;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* background-color: #0000000d; */
+  background-color: var(--bg-milky);
+  /* background-color: rgba(255, 0, 0, 0.453); */
 }
 .title {
   margin: 0.4em 0.2em 0.3em 0.2em;
@@ -127,7 +144,7 @@
   /* top: -2px; */
   top: -3px;
   /* margin-left: 0.3em; */
-  transform: scale(0.82);
+  transform: var(--scale-shrink);
   background-color: transparent;
   opacity: 50%;
 }
@@ -139,10 +156,20 @@
 }
 
 .login {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
   font-size: 1.2em;
+  font-size: 1.6em;
   margin: 0.3em auto 1em auto;
   padding: 0.5em 2em;
   width: 100%;
+  transform: scale(0.95);
+}
+.login:active,
+.login:focus,
+.login:hover {
+  transform: scale(1);
 }
 /* .add() {
 } */

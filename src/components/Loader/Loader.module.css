@@ -1,7 +1,7 @@
 .spinner {
   width: 10em;
   height: 10em;
-  border-top: 1em solid #9a9a9a;
+  border-top: 1em solid #73b39b;
   border-right: 1em solid transparent;
   border-radius: 50%;
   margin: auto;
@@ -16,10 +16,12 @@
 .head {
   width: 1em;
   height: 1em;
-  background-color: #9a9a9a;
+  background-color: #73b39b;
   border-radius: 50%;
   margin-left: 7.78em;
+  margin-left: 8.51em;
   margin-top: 0em;
+  margin-top: 0.49em;
 }
 .head.small {
   margin-left: 2.2em;
@@ -42,7 +44,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #9a9a9a;
+  color: #7fc3aa;
   content: 'Loading..';
   position: absolute;
   text-align: center;
@@ -53,7 +55,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #9a9a9a;
+  color: #7fc3aa;
   content: 'Refreshing \A User..';
   position: absolute;
   text-align: center;
@@ -64,7 +66,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #9a9a9a;
+  color: #7fc3aa;
   content: 'Logging \A out!';
   position: absolute;
   text-align: center;
@@ -80,6 +82,26 @@
   justify-content: center;
   align-items: center;
   /* background-color: rgba(0, 0, 0, 0.8); */
-  background-color: #00000095;
+  /* background-color: #00000095; */
+  background-color: #00000088;
   z-index: 1200;
+}
+.overlay:after {
+  position: absolute;
+  content: '';
+  top: -32%;
+  left: -32%;
+  top: 0;
+  left: 0;
+  z-index: -2000;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  transform: scale(0.75);
+  -webkit-filter: blur(5vw);
+  -moz-filter: blur(5vw);
+  -ms-filter: blur(5vw);
+  filter: blur(5vw);
+  background: linear-gradient(270deg, #0fffc332, #7f0fff32);
+  /* background: linear-gradient(270deg, #c7e4dd, #e1d4f0); */
 }

@@ -2,9 +2,9 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import css from './HeaderNavBtn.module.css';
 
-export const HeaderNavBtn = ({ to = '/', display }) => {
+export const HeaderNavBtn = ({ to = '/', display, inactive = false }) => {
   const location = useLocation();
-  const isHereAlready = location.state && location.pathname === to;
+  const isHereAlready = !inactive && location.state && location.pathname === to;
   return isHereAlready ? (
     <NavLink
       className={nav => `${css.navLink} ${nav.isActive ? css.active : ''}`}
@@ -15,7 +15,11 @@ export const HeaderNavBtn = ({ to = '/', display }) => {
     </NavLink>
   ) : (
     <NavLink
-      className={nav => `${css.navLink}  ${nav.isActive ? css.active : ''}`}
+      className={nav =>
+        `${css.navLink}  ${nav.isActive ? css.active : ''}  ${
+          inactive ? css.inactive : ''
+        }`
+      }
       to={to}
       state={{ from: location.pathname }}
     >

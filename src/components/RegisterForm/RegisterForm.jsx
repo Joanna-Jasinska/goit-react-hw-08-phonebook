@@ -11,7 +11,6 @@ export const RegisterForm = () => {
   const dispatch = useDispatch();
   // const { isLoggedIn } = useAuth();
   const loading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -33,7 +32,7 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <div className={css.card}>
+      <div className={`${css.card}`}>
         <form className={css.form} onSubmit={handleSubmit}>
           <label className={css.label} htmlFor="name">
             Name
@@ -52,7 +51,7 @@ export const RegisterForm = () => {
           />
 
           <label className={css.label} htmlFor="email">
-            email
+            Email
           </label>
           <input
             className={css.input}
@@ -68,7 +67,7 @@ export const RegisterForm = () => {
           />
 
           <label className={css.label} htmlFor="password">
-            password
+            Password
           </label>
           <input
             className={css.input}
@@ -88,7 +87,6 @@ export const RegisterForm = () => {
         </form>
         {loading ? <Loader /> : ''}
       </div>
-      {error ? <span className={css.error}>{error}</span> : ''}
     </>
   );
 };

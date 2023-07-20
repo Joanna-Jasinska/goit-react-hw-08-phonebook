@@ -13,6 +13,11 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    setError(_, action) {
+      return { error: action.payload };
+    },
+  },
   extraReducers: {
     [register.fulfilled](state, action) {
       state.user = action.payload.user;
@@ -42,7 +47,8 @@ const authSlice = createSlice({
       // added
       state.isLoggedIn = false;
       state.isLoading = false;
-      state.error = 'Unable to log in with this data.';
+      state.error =
+        'Unable to log in. Please check email / password and try again.';
     },
     [logIn.pending](state, action) {
       // added
@@ -53,6 +59,11 @@ const authSlice = createSlice({
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
+    },
+    [logOut.rejected](state) {
+      // added
+      state.isLoggedIn = false;
+      state.isLoading = false;
     },
     [refreshUser.pending](state) {
       state.isRefreshing = true;
@@ -69,4 +80,5 @@ const authSlice = createSlice({
   },
 });
 
+export const { setError } = authSlice.actions;
 export const authReducer = authSlice.reducer;

@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Title } from './Title/Title';
-import { addContact, deleteContactById } from 'redux/operations';
-import { setFilter } from 'redux/filterSlice';
-import { selectContacts } from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import {
+  addContact,
+  deleteContactById,
+  fetchContacts,
+} from 'redux/contacts/operations';
+import { setFilter } from 'redux/filter/filterSlice';
+import { selectContacts } from 'redux/contacts/selectors';
 import css from './Phonebook.module.css';
 export const Phonebook = () => {
   const [name, setName] = useState('');
@@ -15,9 +18,9 @@ export const Phonebook = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const addContactHandle = (e, newContact) => {
     e.preventDefault();
@@ -54,7 +57,7 @@ export const Phonebook = () => {
     dispatch(deleteContactById(contact.id));
   };
   return (
-    <div className={css.phonebook}>
+    <div className={`${css.pphonebook}`}>
       <Title title="Phonebook" />
 
       <ContactForm

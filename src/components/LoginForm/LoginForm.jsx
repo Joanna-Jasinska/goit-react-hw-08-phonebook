@@ -19,10 +19,10 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className={css.card}>
+    <div className={`${css.card}`}>
       <form className={css.form} onSubmit={handleSubmit}>
         <label className={css.label} htmlFor="email">
-          email
+          Email
         </label>
         <input
           className={css.input}
@@ -39,7 +39,7 @@ export const LoginForm = () => {
         />
 
         <label className={css.label} htmlFor="password">
-          password
+          Password
         </label>
         <input
           className={css.input}

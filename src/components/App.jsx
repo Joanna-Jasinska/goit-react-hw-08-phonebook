@@ -1,11 +1,13 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Layout } from './Layout/Layout';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 import { Loader } from './Loader/Loader';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { setError } from 'redux/auth/slice';
+import { useAuth } from 'hooks';
 // import { refreshUser } from 'redux/auth/operations';
 // import { useAuth } from 'hooks';
 
@@ -18,11 +20,20 @@ export const App = () => {
   const dispatch = useDispatch();
   // const { isRefreshing } = useAuth();
   const isRefreshing = false;
+  const { error } = useAuth();
 
   useEffect(() => {
     // dispatch(refreshUser());
     dispatch(fetchContacts());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        dispatch(setError(null));
+      }, 2000);
+    }
+  }, [error, dispatch]);
 
   // return (
   //   <div className="app">

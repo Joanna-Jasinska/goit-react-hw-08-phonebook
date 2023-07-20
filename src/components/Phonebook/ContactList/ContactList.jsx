@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from 'redux/filter/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilter } from 'redux/selectors';
-import { selectContactsAreLoading } from 'redux/selectors';
+import { selectFilter } from 'redux/contacts/selectors';
+import { selectLoading } from 'redux/contacts/selectors';
 import css from './../Phonebook.module.css';
 
 export const ContactList = ({ contacts, deleteContactHandle }) => {
@@ -59,12 +59,12 @@ export const ContactList = ({ contacts, deleteContactHandle }) => {
           type="button"
           onClick={e => dispatch(setFilter(''))}
         >
-          Clear
+          Clear Filter
         </button>
       ) : (
         ''
       )}
-      {useSelector(selectContactsAreLoading) ? (
+      {useSelector(selectLoading) ? (
         <>
           <br />
           Loading changes...
