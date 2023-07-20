@@ -8,16 +8,22 @@ import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 import { setError } from 'redux/auth/slice';
 import { useAuth } from 'hooks';
 import { refreshUser } from 'redux/auth/operations';
+// import jj from './../images/jj_favicon.ico';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const LogoutPage = lazy(() => import('../pages/LogoutPage'));
 const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
+
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
   const { error } = useAuth();
+
+  useEffect(() => {
+    document.title = 'Phonebook';
+  }, []);
 
   useEffect(() => {
     dispatch(refreshUser());
