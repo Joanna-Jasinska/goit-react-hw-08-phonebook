@@ -1,15 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from 'components/Header/Header';
+import { Navigation } from 'components/Navigation/Navigation';
 import { Footer } from 'components/Footer/Footer';
+import { UserMenu } from 'components/UserMenu/UserMenu';
 import { Suspense } from 'react';
+import { useAuth } from 'hooks';
 import css from './Layout.module.css';
 
 export const Layout = () => {
+  const { user, isLoggedIn } = useAuth();
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
       {/* <AppBar /> */}
       <div className={css.backLight} />
-      <Header />
+      {isLoggedIn ? <UserMenu /> : <Navigation />}
+
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>

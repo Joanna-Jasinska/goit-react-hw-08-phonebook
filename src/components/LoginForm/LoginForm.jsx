@@ -43,7 +43,7 @@ export const LoginForm = () => {
         </label>
         <input
           className={css.input}
-          type="text"
+          type="password"
           id="password"
           name="password"
           // value={'mariola'}

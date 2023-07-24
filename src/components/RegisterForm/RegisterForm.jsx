@@ -61,7 +61,7 @@ export const RegisterForm = () => {
           </label>
           <input
             className={css.input}
-            type="text"
+            type="password"
             id="password"
             name="password"
             title="Password used to log in."
