@@ -7,7 +7,7 @@ import { useAuth } from 'hooks';
 import css from './Layout.module.css';
 
 export const Layout = () => {
-  const { user, isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
       {/* <AppBar /> */}
