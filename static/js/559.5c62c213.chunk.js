@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[559],{9559:function(o,t,e){e.r(t),e.d(t,{LogoutPage:function(){return c}});var n=e(2639),i=e(3855),u=e(2791),r=e(9273),a=e(184),c=function(){var o=(0,i.I0)();return(0,u.useEffect)((function(){o((0,r.ni)({})),console.log("attempting to log out")}),[o]),(0,a.jsx)("main",{style:{width:"100%",boxSizing:"border-box",padding:"0.4em 0px"},children:(0,a.jsx)(n.a,{txt:"logout"})})};t.default=c}}]);
-//# sourceMappingURL=559.5c62c213.chunk.js.map
